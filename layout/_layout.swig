@@ -83,13 +83,20 @@
         </span>
       </div>
     {% endif %}
-
+	
     {% if theme.add_this_id %}
       <div>
         {% include '_partials/share/add-this.swig' %}
       </div>
     {% endif %}
   </div>
+
+  <script src=js/active-power-mode.min.js"></script>
+  <script>
+  POWERMODE.colorful = true; // 火花各种颜色
+  POWERMODE.shake = false; // 关闭打字屏幕颤抖效果
+  document.body.addEventListener('input', POWERMODE);
+  </script>
 
   {% include '_scripts/vendors.swig' %}
   {% include '_scripts/commons.swig' %}
@@ -123,6 +130,15 @@
   {% for inject_item in theme.injects.bodyEnd %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {% endfor %}
-
+  
 </body>
 </html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="js/love.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="js/duoshuoshuo.min.js"></script>
+
+<!--Google Analytics 代理-->
+<script type="text/javascript" src="js/googleanalytics_proxy.min.js"></script>

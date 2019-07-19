@@ -6,6 +6,7 @@ title:
 
 menu:
   home: Home
+  photo: Photo
   archives: Archives
   categories: Categories
   tags: Tags
@@ -42,7 +43,7 @@ post:
     link: Post link
     license_title: Copyright Notice
     license_content: "All articles in this blog are licensed under %s unless stating additionally."
-
+  recommended_posts: Recommended Posts
 page:
   totally: Totally
   tags: tags
