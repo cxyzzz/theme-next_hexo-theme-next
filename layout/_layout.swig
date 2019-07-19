@@ -91,7 +91,7 @@
     {% endif %}
   </div>
 
-  <script src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@0.0/js/activate-power-mode.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/activate-power-mode.js"></script>
   <script>
   POWERMODE.colorful = true; // 火花各种颜色
   POWERMODE.shake = false; // 关闭打字屏幕颤抖效果
@@ -135,10 +135,10 @@
 </html>
 
 <!-- 页面点击小红心 -->
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@0.0/js/love.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/love.js"></script>
 
 <!--崩溃欺骗-->
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@0.0/js/duoshuoshuo.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/duoshuoshuo.js"></script>
 
 <!--Google Analytics 代理-->
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@0.0/js/googleanalytics_proxy.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/googleanalytics_proxy.min.js"></script>
