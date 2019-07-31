@@ -9,11 +9,11 @@
 
 {% block content %}
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
+    {%- for post in page.posts %}
         {% if post.notshow != true %}
-            {{ post_template.render(post, true) }}
+          {{ partial('_macro/post.swig', {is_index: true}) }}
         {% endif %}
-    {% endfor %}
+    {%- endfor %}
   </section>
 
   {% include '_partials/pagination.swig' %}
