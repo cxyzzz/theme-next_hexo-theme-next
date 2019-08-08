@@ -83,6 +83,15 @@
     {{ partial('_partials/share/index.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
+  <script src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/activate-power-mode.js"></script>
+  <script>
+  POWERMODE.colorful = true; // 火花各种颜色
+  POWERMODE.shake = false; // 关闭打字屏幕颤抖效果
+  document.body.addEventListener('input', POWERMODE);
+  </script>
+
+  {% include '_scripts/vendors.swig' %}
+  {% include '_scripts/commons.swig' %}
   {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_third-party/index.swig', {}, {cache: theme.cache.enable}) }}
 
@@ -106,3 +115,12 @@
   {%- endif %}
 </body>
 </html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/love.js"></script>
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/duoshuoshuo.js"></script>
+
+<!--Google Analytics 代理-->
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/googleanalytics_proxy.min.js"></script>
