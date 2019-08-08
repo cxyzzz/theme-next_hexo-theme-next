@@ -93,14 +93,16 @@
 {%- endif %}
 
 {# Export some HEXO Configurations to Front-End #}
-<script id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '{{ theme.root }}',
+    root: '{{ config.root }}',
     scheme: '{{ theme.scheme }}',
     version: '{{ version }}',
+    exturl: {{ theme.exturl }},
     sidebar: {{ theme.sidebar | json_encode }},
     back2top: {{ theme.back2top | json_encode }},
+    save_scroll: {{ theme.save_scroll }},
     copycode: {{ theme.codeblock.copy_button | json_encode }},
     fancybox: {{ theme.fancybox }},
     mediumzoom: {{ theme.mediumzoom }},
@@ -114,11 +116,7 @@
       labels: {{ theme.algolia_search.labels | json_encode }}
     },
     localsearch: {{ theme.local_search | json_encode }},
-    search: {
-      root: '{{ config.root }}',
-      path: '{{ config.search.path }}'
-    },
-    tabs: {{ theme.tabs.enable }},
+    path: '{{ config.search.path }}',
     motion: {{ theme.motion | json_encode }},
     translation: {
       copy_button: '{{__("post.copy_button")}}',
