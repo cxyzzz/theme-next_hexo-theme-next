@@ -90,8 +90,6 @@
   document.body.addEventListener('input', POWERMODE);
   </script>
 
-  {% include '_scripts/vendors.swig' %}
-  {% include '_scripts/commons.swig' %}
   {{ partial('_scripts/index.swig', {}, {cache: theme.cache.enable}) }}
   {{ partial('_third-party/index.swig', {}, {cache: theme.cache.enable}) }}
 
