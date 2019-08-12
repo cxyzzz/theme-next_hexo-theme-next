@@ -18,6 +18,18 @@
   {%- endif %}
   {# endshow #}
 
+ {# Show month #}
+ {% set month %}
+ {% set post.month = date(post.date, 'MMM') %}
+
+{% if post.month !== month %}
+   {% set month = post.month %}
+   <div class="collection-title">
+     <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="archive-year" id="archive-year-{{ year }}">{{ month }}</{%- if theme.seo %}h3{% else %}h2{%- endif %}>
+   </div>
+{% endif %}
+ {# endshow #}
+
   <article class="post post-type-{{ post.type | default('normal') }}" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
