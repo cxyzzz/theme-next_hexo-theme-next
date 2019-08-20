@@ -18,19 +18,19 @@
   {%- endif %}
   {# endshow #}
 
- {# Show month #}
- {% set month %}
- {% set post.month = date(post.date, 'MMM') %}
+  {# Show month #}
+  {% set month %}
+  {% set post.month = date(post.date, 'MMM') %}
 
-{% if post.month !== month %}
-   {% set month = post.month %}
-   <div class="collection-title">
-     <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="archive-year" id="archive-year-{{ year }}">{{ month }}</{%- if theme.seo %}h3{% else %}h2{%- endif %}>
-   </div>
-{% endif %}
- {# endshow #}
+  {% if post.month !== month %}
+    {% set month = post.month %}
+    <div class="collection-title">
+      <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="archive-year" id="archive-year-{{ year }}">{{ month }}</{%- if theme.seo %}h3{% else %}h2{%- endif %}>
+    </div>
+  {% endif %}
+  {# endshow #}
 
-  <article class="post post-type-{{ post.type | default('normal') }}" itemscope itemtype="http://schema.org/Article">
+  <article class="post" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="post-title">
@@ -40,11 +40,7 @@
           {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
         {% else %}
           <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
-            {%- if post.type === 'picture' %}
-              {{ post.content }}
-            {% else %}
-              <span itemprop="name">{{ post.title | default(__('post.untitled')) }}</span>
-            {%- endif %}
+            <span itemprop="name">{{ post.title | default(__('post.untitled')) }}</span>
           </a>
         {%- endif %}
       </{%- if theme.seo %}h3{% else %}h2{%- endif %}>
