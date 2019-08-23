@@ -1,14 +1,13 @@
 {% macro render(posts) %}
 {%- for post in posts %}
 
-  {# Show year #}
   {%- set year %}
   {%- set post.year = date(post.date, 'YYYY') %}
 
   {%- if post.year !== year %}
     {%- set year = post.year %}
-    <div class="collection-title">
-      <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="archive-year" id="archive-year-{{ year }}">
+    <div class="collection-year">
+      <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">
       {{ year }}
       <div class="chinese-zodiac">
         {%- include '../../../../source/_data/chinese-zodiac.swig' %}
@@ -16,18 +15,17 @@
       </{%- if theme.seo %}h2{% else %}h1{%- endif %}>
     </div>
   {%- endif %}
-  {# endshow #}
 
   {# Show month #}
-  {% set month %}
-  {% set post.month = date(post.date, 'MMM') %}
+  {%- set month %}
+  {%- set post.month = date(post.date, 'MMM') %}
 
-  {% if post.month !== month %}
-    {% set month = post.month %}
-    <div class="collection-title">
-      <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="archive-year" id="archive-year-{{ year }}">{{ month }}</{%- if theme.seo %}h3{% else %}h2{%- endif %}>
+  {%- if post.month !== month %}
+    {%- set month = post.month %}
+    <div class="collection-month">
+      <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="collection-header">{{ month }}</{%- if theme.seo %}h3{% else %}h2{%- endif %}>
     </div>
-  {% endif %}
+  {%- endif %}
   {# endshow #}
 
   <article class="post" itemscope itemtype="http://schema.org/Article">
