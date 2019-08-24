@@ -32,13 +32,15 @@
       <div class="header-inner">{% include '_partials/header/index.swig' %}</div>
     </header>
 
+    {{ partial('_partials/widgets.swig', {}, {cache: theme.cache.enable}) }}
+
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           {%- if theme.scheme === 'Pisces' || theme.scheme === 'Gemini' %}
             {% include '_partials/header/sub-menu.swig' %}
           {%- endif %}
-          <div id="content" class="content {% block page_class %}{% endblock %}">
+          <div id="content" class="content">
             {% block content %}{% endblock %}
           </div>
           {% include '_partials/comments.swig' %}
@@ -56,8 +58,6 @@
         {% block footer %}{% endblock %}
       </div>
     </footer>
-
-    {{ partial('_partials/widgets.swig', {}, {cache: theme.cache.enable}) }}
   </div>
 
   <script src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/activate-power-mode.js"></script>
@@ -77,8 +77,6 @@
   {% include '_third-party/math/index.swig' %}
   {% include '_third-party/quicklink.swig' %}
   {% include '_third-party/vkontakte-api.swig' %}
-
-  {% block script_extra %}{% endblock %}
 
   {{- next_inject('bodyEnd') }}
 
