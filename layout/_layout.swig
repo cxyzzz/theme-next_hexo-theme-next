@@ -82,7 +82,6 @@
 
   {%- if theme.pjax %}
     </div>
-    {{ partial('_scripts/pjax.swig', {}, {cache: theme.cache.enable}) }}
   {%- endif %}
 </body>
 </html>
