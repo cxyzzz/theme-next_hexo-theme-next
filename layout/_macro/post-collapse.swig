@@ -1,14 +1,14 @@
 {% macro render(posts) %}
 {%- for post in posts %}
 
-  {%- set year %}
-  {%- set post.year = date(post.date, 'YYYY') %}
+  {%- set current_year %}
+  {%- set year = date(post.date, 'YYYY') %}
 
-  {%- if post.year !== year %}
-    {%- set year = post.year %}
+  {%- if year !== current_year %}
+    {%- set current_year = year %}
     <div class="collection-year">
       <{%- if theme.seo %}h2{% else %}h1{%- endif %} class="collection-header">
-      {{ year }}
+      {{ current_year }}
       <div class="chinese-zodiac">
         {%- include '../../../../source/_data/chinese-zodiac.swig' %}
       </div>
@@ -17,13 +17,13 @@
   {%- endif %}
 
   {# Show month #}
-  {%- set month %}
-  {%- set post.month = date(post.date, 'MMM') %}
+  {%- set current_month %}
+  {%- set month = date(post.date, 'MMM') %}
 
-  {%- if post.month !== month %}
-    {%- set month = post.month %}
+  {%- if month !== current_month %}
+    {%- set current_month = month %}
     <div class="collection-month">
-      <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="collection-header">{{ month }}</{%- if theme.seo %}h3{% else %}h2{%- endif %}>
+      <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="collection-header">{{ current_month }}</{%- if theme.seo %}h3{% else %}h2{%- endif %}>
     </div>
   {%- endif %}
   {# endshow #}
