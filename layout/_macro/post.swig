@@ -235,6 +235,12 @@
         {{ partial('_partials/post/post-reward.swig', {}, {cache: theme.cache.enable}) }}
       {%- endif %}
 
+      {%- if theme.add_this_id %}
+        <div class="addthis_inline_share_toolbox">
+          <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ theme.add_this_id }}" async="async"></script>
+        </div>
+      {%- endif %}
+
       {%- if theme.creative_commons.license and theme.creative_commons.post %}
         {{ partial('_partials/post/post-copyright.swig') }}
       {%- endif %}
