@@ -71,8 +71,5 @@
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/love.js"></script>
 
-<!--崩溃欺骗-->
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.8.13a/js/duoshuoshuo.js"></script>
-
 <!--Google Analytics 代理-->
 <script type="text/javascript" src="//cdn.jsdelivr.net/gh/cxyzzz/CDN@19.7.19a/js/googleanalytics_proxy.min.js"></script>
