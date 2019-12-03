@@ -63,14 +63,11 @@
             });
             return;
           }
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
+          for (let item of results) {
+            let { url, time } = item;
             leancloudSelector(url).innerText = time;
           }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
+          for (let url of entries) {
             var element = leancloudSelector(url);
             if (element.innerText == '') {
               element.innerText = 0;
