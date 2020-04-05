@@ -70,9 +70,9 @@
         </time>
       </div>
 
-      <{%- if theme.seo %}h3{% else %}h2{%- endif %} class="post-title">
+      <div class="post-title">
         {%- if post.link %}{# Link posts #}
-          {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
+          {%- set postTitleIcon = '<i class="fa fa-external-link-alt"></i>' %}
           {%- set postText = post.title or post.link %}
           {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url'}) }}
         {% else %}
@@ -80,7 +80,7 @@
             <span itemprop="name">{{ post.title or __('post.untitled') }}</span>
           </a>
         {%- endif %}
-      </{%- if theme.seo %}h3{% else %}h2{%- endif %}>
+      </div>
 
     </header>
   </article>
